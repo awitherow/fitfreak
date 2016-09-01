@@ -11,11 +11,11 @@ var bot = new Bot({
 var hour = 60*60*1000;
 
 bot.on('start', function() {
-    doSomethingYouFatPiggies();
-    setInterval(doSomethingYouFatPiggies, hour);
+    movePiggy();
+    setInterval(movePiggy, hour);
 });
 
-function doSomethingYouFatPiggies() {
+function movePiggy() {
     var message = messages[Math.floor(Math.random()*messages.length)];
     var user = 'austin';
     bot.postMessageToUser(user, message);
