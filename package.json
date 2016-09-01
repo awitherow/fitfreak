@@ -19,6 +19,7 @@
   "homepage": "https://github.com/awitherow/fitfreak#readme",
   "dependencies": {
     "dotenv": "^2.0.0",
+    "moment": "^2.14.1",
     "slackbots": "^0.5.2"
   }
 }

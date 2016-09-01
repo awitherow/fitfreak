@@ -1,4 +1,5 @@
 require('dotenv').config();
+var moment = require('moment');
 var Bot = require('slackbots');
 var messages = require('./commands/messages');
 
@@ -16,5 +17,7 @@ bot.on('start', function() {
 
 function doSomethingYouFatPiggies() {
     var message = messages[Math.floor(Math.random()*messages.length)];
-    bot.postMessageToChannel('fitness', message);
+    var user = 'austin';
+    bot.postMessageToUser(user, message);
+    console.log('message sent to ' + user + ' at ' + moment().calendar());
 }
