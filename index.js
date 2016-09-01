@@ -6,7 +6,14 @@ var bot = new Bot({
     name: 'fitfreak'
 });
 
+var hour = 60*60*1000;
+
 bot.on('start', function() {
-    bot.postMessageToUser('@awitherow', 'hello bro!');
-    console.log('message sent');
+    doSomethingYouFatPiggies();
+    setInterval(doSomethingYouFatPiggies(), hour);
 });
+
+function doSomethingYouFatPiggies() {
+    var message = ':muscle: Get up, do some push ups or face pulls. Afterwards, drink some water! :potable_water:'
+    bot.postMessageToChannel('fitness', message);
+}
