@@ -1,5 +1,6 @@
 require('dotenv').config();
 var Bot = require('slackbots');
+var messages = require('./commands/messages');
 
 var bot = new Bot({
     token: process.env.SLACK_BOT_TOKEN,
@@ -14,6 +15,6 @@ bot.on('start', function() {
 });
 
 function doSomethingYouFatPiggies() {
-    var message = ':muscle: Get up, do some push ups or face pulls. Afterwards, drink some water! :potable_water:'
+    var message = messages[Math.floor(Math.random()*messages.length)];
     bot.postMessageToChannel('fitness', message);
 }
