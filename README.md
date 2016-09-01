@@ -1,5 +1,5 @@
 # fitfreak
-fit robot for slack
+fit robot for slack, reminds me to get off my ass every hour.
 
 ## dependencies
 
