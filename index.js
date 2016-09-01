@@ -1,9 +1,12 @@
 require('dotenv').config();
-var slackTerminal = require('slack-terminalize');
+var Bot = require('slackbots');
 
-slackTerminal.init(process.env.SLACK_BOT_TOKEN, {
-    // slack client options here
-    }, {
-    CONFIG_DIR: __dirname + '/config',
-    COMMAND_DIR: __dirname + '/commands'
+var bot = new Bot({
+    token: process.env.SLACK_BOT_TOKEN,
+    name: 'fitfreak'
+});
+
+bot.on('start', function() {
+    bot.postMessageToUser('@awitherow', 'hello bro!');
+    console.log('message sent');
 });
