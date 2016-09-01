@@ -10,7 +10,7 @@ var hour = 60*60*1000;
 
 bot.on('start', function() {
     doSomethingYouFatPiggies();
-    setInterval(doSomethingYouFatPiggies(), hour);
+    setInterval(doSomethingYouFatPiggies, hour);
 });
 
 function doSomethingYouFatPiggies() {
