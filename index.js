@@ -17,7 +17,10 @@ bot.on('start', function() {
 
 function movePiggy() {
     var message = messages[Math.floor(Math.random()*messages.length)];
-    var user = 'austin';
-    bot.postMessageToUser(user, message);
-    console.log('message sent to ' + user + ' at ' + moment().calendar());
+    var users = ['austin', 'olga'];
+    users.forEach(user => {
+        bot.postMessageToUser(user, message);
+        console.log('message sent to ' + user + ' at ' + moment().calendar());
+    });
+    console.log('---'));
 }
