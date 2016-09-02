@@ -1,9 +1,11 @@
 var messages = [
-    ':muscle: Get up and move. Afterwards, drink some water! :potable_water:',
-    'When is the last time you moved? Sweat and replenish! #fuckyeahfitness :muscle:',
-    'CHALLENGE! Do as many pushups as you can in a row, right now! :muscle:',
-    'CHALLENGE! Do as many facepulls (kettlebell) as you can in a row, right now! :muscle:',
-    'work on that fine ass, walk down the stairs to the first floor, and back up!'
+    ':potable_water: :muscle: Get up and move. Afterwards, drink some water!',
+    'When is the last time you moved? Sweat and replenish! #fuckyeahfitness',
+    'Max pushups, go!',
+    'Max facepulls (kettlebell), right now!',
+    'Max abdominals, I choose you!',
+    "Max hanstand hold, let's get it up!",
+    'Knackpotrainingzeit, treppenlaufen los!'
 ];
 
 module.exports = messages;
