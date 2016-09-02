@@ -39,7 +39,9 @@ don't have atom installed? https://atom.io/
 
 you should see
 
-```SLACK_BOT_TOKEN=""```
+```
+SLACK_BOT_TOKEN=""
+```
 
 Paste your code between the quotations.
 
