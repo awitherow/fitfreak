@@ -56,7 +56,7 @@ or better, add the fitfreak project to atom via file > add project to atom.
 on line 20, change
 
 ```javascript
-  var users = ['austin', 'olga'];
+var users = ['austin', 'olga'];
 ```
 
 to your username(s).
