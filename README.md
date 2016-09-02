@@ -53,10 +53,12 @@ atom index.js
 
 or better, add the fitfreak project to atom via file > add project to atom.
 
-on line 20,
+on line 20, change
 
 ```javascript
   var users = ['austin', 'olga'];
 ```
 
-to your username(s). Or if you wanna send to a group, or extend the bot, check out the forementioned slackbots npm module and begin writing your own functions.
+to your username(s).
+
+Or if you wanna send to a group, or extend the bot, check here https://www.npmjs.com/package/slackbots
