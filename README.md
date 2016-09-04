@@ -7,6 +7,18 @@ https://www.npmjs.com/package/slackbots
 https://www.npmjs.com/package/moment
 https://www.npmjs.com/package/dotenv
 
+## roadmap
+> without the stupid ass post-it notes all over the wall that lead to no actual development, looking at you product owners...
+
+### todo
+
+- [x] enable periodic messaging
+- [ ] enable user preferences
+  - heroku based solution
+  - ideas: working hours, plans, etc.
+
+------
+
 ## installation
 
 > based on os x
