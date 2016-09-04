@@ -74,3 +74,11 @@ var users = ['austin', 'olga'];
 to your username(s).
 
 Or if you wanna send to a group, or extend the bot, check here https://www.npmjs.com/package/slackbots
+
+After you have done this, go back to your terminal and
+
+```bash
+npm start
+```
+
+fitfreak should now message you via slack with one of these random messages!
