@@ -12,7 +12,7 @@ const bot = new Bot({
 const hour = 60*60*1000
 
 bot.on('message', function(data) {
-    visitThePostOffice(bot, data)
+    visitThePostOffice(data)
 })
 
 bot.on('start', function() {
@@ -28,3 +28,5 @@ function movePiggy() {
         console.log('message sent to ' + user + ' at ' + moment().calendar())
     })
 }
+
+export { bot };
