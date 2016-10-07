@@ -13,7 +13,7 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
     console.log('Error loading client secret file: ' + err);
     return;
   }
-  authorize(JSON.parse(content), listRows);
+  authorize(JSON.parse(content), getUserData);
 });
 
 function authorize(credentials, callback) {
@@ -69,16 +69,12 @@ function storeToken(token) {
   console.log('Token stored to ' + TOKEN_PATH);
 }
 
-/**
- * Print the names and majors of students in a sample spreadsheet:
- * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- */
-function listRows(auth) {
+function getUserData(auth) {
   var sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
     auth: auth,
     spreadsheetId: '15y8thmW_8rWHzmO4O5aJ097M7VqPVcyGIE6yoQxfT9Q',
-    range: 'Class Data!A1:D',
+    range: 'User Data!A1:D',
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
