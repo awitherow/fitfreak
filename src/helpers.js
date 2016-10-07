@@ -1,3 +1,17 @@
+import config from './config';
+
+function processUserData(res) {
+  const userDataColumns = config.userDataColumns;
+  let data = {};
+  for (let i = 0; i < userDataColumns.length; i++) {
+    const col = userDataColumns[i]
+    const key = col.name
+    const type = col.type
+    data[key] = handleData(type, res[i])
+  }
+  return data;
+}
+
 function handleData(type, data) {
   switch(type) {
     case 'string': return data;
@@ -8,5 +22,6 @@ function handleData(type, data) {
 }
 
 export {
-  handleData
+  handleData,
+  processUserData
 }

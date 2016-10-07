@@ -1,10 +1,9 @@
 import { bot } from './fitfreak'
 
-import { spreadsheetConnect } from './auth';
-import { getUserData } from './spreadsheets';
+import { spreadsheetConnect } from './auth'
+import { getUserData } from './spreadsheets'
 
-import config from './config';
-import { handleData } from './helpers';
+import { processUserData } from './helpers'
 
 export default function visitThePostOffice(data) {
   if (!isJunkMail(data.type)) {
@@ -24,23 +23,20 @@ function sendToMessageProcessing(data) {
   const sender = users._value.members.filter((user) => user.id === data.user)[0]
   if (sender) {
     spreadsheetConnect(auth => {
-      let userData = getUserData(auth, sender.name, function(err, res) {
+      getUserData(auth, sender.name, function(err, res) {
         res = res[0]; // single user
         if (!err && err === 'no data found') {
           // create user row
         } else {
-          const userDataColumns = config.userDataColumns;
           bot.postMessageToUser(sender.name, `Hello ${sender.name}`)
-          let data = {};
-          for (let i = 0; i < userDataColumns.length; i++) {
-            const col = userDataColumns[i]
-            const key = col.name
-            const type = col.type
-            data[key] = handleData(type, res[i])
-          }
-          console.log(data)
+          let userData = processUserData(res);
+          processMessage(sender, userData);
         }
       });
     });
   }
+}
+
+function processMessage(sender, userData){
+  console.log(sender, userData);
 }
