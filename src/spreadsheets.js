@@ -1,6 +1,6 @@
 var google = require('googleapis');
 
-function getUserData(auth) {
+function getUserData(auth, name) {
   var sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
     auth: auth,
@@ -15,11 +15,12 @@ function getUserData(auth) {
     if (rows.length == 0) {
       console.log('No data found.');
     } else {
-      for (var i = 0; i < rows.length; i++) {
-        var row = rows[i];
-        // Print columns A and E, which correspond to indices 0 and 4.
-        console.log('%s, %s', row[0], row[1], row[2], row[3]);
-      }
+      console.log(rows);
+      return rows;
     }
   });
+}
+
+export {
+  getUserData
 }

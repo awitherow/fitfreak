@@ -8,7 +8,7 @@ var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/';
 var TOKEN_PATH = TOKEN_DIR + 'sheets.googleapis.com-nodejs-quickstart.json';
 
-module.export = function spreadsheetConnect(cb) {
+function spreadsheetConnect(cb) {
   fs.readFile('client_secret.json', function processClientSecrets(err, content) {
     if (err) {
       console.log('Error loading client secret file: ' + err);
@@ -16,6 +16,10 @@ module.export = function spreadsheetConnect(cb) {
     }
     authorize(JSON.parse(content), cb);
   });
+}
+
+export {
+  spreadsheetConnect,
 }
 
 function authorize(credentials, callback) {

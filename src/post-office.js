@@ -1,5 +1,7 @@
 import { bot } from './fitfreak'
 import messages from './commands/messages'
+import { spreadsheetConnect } from './auth';
+import { getUserData } from './spreadsheets';
 
 export default function visitThePostOffice(data) {
   if (!isJunkMail(data.type)) {
@@ -17,5 +19,11 @@ function isJunkMail(type) {
 function sendToMessageProcessing(data) {
   const users = bot.getUsers()
   const sender = users._value.members.filter((user) => user.id === data.user)[0]
-  if (sender) bot.postMessageToUser(sender.name, 'Hello');
+  if (sender) {
+    spreadsheetConnect(auth => {
+      let userData = getUserData(auth, sender.name)
+      bot.postMessageToUser(sender.name, 'Hello')
+    });
+  }
+
 }
