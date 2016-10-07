@@ -2,7 +2,7 @@ require('dotenv').config()
 import moment from 'moment'
 import Bot from 'slackbots'
 import messages from './commands/messages'
-import visitThePostOffice from './post-office'
+import handleMessage from './post-office'
 
 const bot = new Bot({
     token: process.env.SLACK_BOT_TOKEN,
@@ -12,7 +12,7 @@ const bot = new Bot({
 const hour = 60*60*1000
 
 bot.on('message', function(data) {
-    visitThePostOffice(data)
+    handleMessage(data)
 })
 
 bot.on('start', function() {
