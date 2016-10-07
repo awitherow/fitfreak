@@ -16,6 +16,7 @@ bot.on('message', function(data) {
 })
 
 bot.on('start', function() {
+    console.log('fitfreak on standby, waiting for orders');
     //movePiggy()
     //setInterval(movePiggy, hour)
 })
