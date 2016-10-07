@@ -1,5 +1,5 @@
 import { bot } from './fitfreak'
-import messages from './commands/messages'
+
 import { spreadsheetConnect } from './auth';
 import { getUserData } from './spreadsheets';
 import config from './config';
