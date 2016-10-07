@@ -2,6 +2,7 @@ import { bot } from './fitfreak'
 import messages from './commands/messages'
 import { spreadsheetConnect } from './auth';
 import { getUserData } from './spreadsheets';
+import config from './config';
 
 export default function visitThePostOffice(data) {
   if (!isJunkMail(data.type)) {
