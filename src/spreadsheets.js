@@ -1,6 +1,6 @@
 import google from 'googleapis'
 
-function getUserData(auth, name, cb) {
+function getUserData(auth, id, cb) {
   var sheets = google.sheets('v4')
   sheets.spreadsheets.values.get({
     auth,
@@ -15,7 +15,7 @@ function getUserData(auth, name, cb) {
     if (rows.length == 0) {
       cb('no data found', {})
     } else {
-      cb(null, rows.filter(row => row[0] === name))
+      cb(null, rows.filter(row => row[0] === id))
     }
   });
 }

@@ -1,5 +1,8 @@
 module.exports = {
   userDataColumns: [{
+    name: 'id',
+    type: 'string'
+  }, {
     name: 'name',
     type: 'string'
   }, {

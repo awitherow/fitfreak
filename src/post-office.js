@@ -23,7 +23,7 @@ function getDataProcessMessage(data) {
   const sender = users._value.members.filter((user) => user.id === data.user)[0]
   if (sender) {
     spreadsheetConnect(auth => {
-      getUserData(auth, sender.name, function(err, res) {
+      getUserData(auth, sender.id, function(err, res) {
         res = res[0]; // single user
         if (!err && err === 'no data found') {
           // create user row

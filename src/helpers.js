@@ -13,6 +13,7 @@ function processUserData(res) {
 }
 
 function handleData(type, data) {
+  if (!data) return null
   switch(type) {
     case 'string': return data;
     case 'json': return JSON.parse(data)
